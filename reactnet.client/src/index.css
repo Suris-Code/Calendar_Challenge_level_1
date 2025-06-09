@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom styling for calendar */
+.sx-calendar {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
