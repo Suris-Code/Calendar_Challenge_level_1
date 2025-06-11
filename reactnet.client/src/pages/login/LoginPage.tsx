@@ -31,8 +31,12 @@ const LoginPage = () => {
     
     try {
       const response = await authService.login(formData);
-      login(response.user, response.token);
-      navigate('/');
+      if(response.user && response.token){
+        login(response.user, response.token);
+        navigate('/');
+      } else {
+        setError('Invalid login credentials');
+      }
     } catch (err: any) {
       setError(err.response?.data?.message || 'Login failed. Please check your credentials.');
     } finally {
